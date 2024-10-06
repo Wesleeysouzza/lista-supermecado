@@ -1,0 +1,12 @@
+<form (ngSubmit)="adicionarItem()">
+    <input
+      type="text"
+      [(ngModel)]="novoItem"
+      name="item"
+      required
+      placeholder="Adicionar novo item"
+    />
+    <button type="submit">Adicionar</button>
+    <div *ngIf="erro" class="erro">{{ erro }}</div>
+  </form>
+  

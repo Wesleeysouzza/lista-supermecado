@@ -1,0 +1,20 @@
+<!-- src/app/components/item/item.component.html -->
+<div class="item" [class.comprado]="item.comprado">
+    <input
+      type="checkbox"
+      [checked]="item.comprado"
+      (change)="marcarComprado()"
+    />
+    <span *ngIf="!editando">{{ item.nome }}</span>
+    <input
+      *ngIf="editando"
+      type="text"
+      [(ngModel)]="item.nome"
+      (blur)="salvarEdicao()"
+      (keyup.enter)="salvarEdicao()"
+    />
+    <button *ngIf="!editando" (click)="editarItem()">✏️</button>
+    <button *ngIf="editando" (click)="salvarEdicao()">💾</button>
+    <button (click)="removerItem()">🗑️</button>
+  </div>
+  

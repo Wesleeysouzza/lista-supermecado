@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Lista de Compras</h1>
+  
+    <app-add-item (adicionar)="adicionarItem($event)"></app-add-item>
+  
+    <!-- Lista de itens não comprados -->
+    <h2>Itens a Comprar</h2>
+    <app-item
+      *ngFor="let item of itensNaoComprados"
+      [item]="item"
+      (atualizar)="atualizarItem($event)"
+      (remover)="removerItem($event)"
+    ></app-item>
+  
+    <!-- Lista de itens comprados -->
+    <h2>Itens Comprados</h2>
+    <app-item
+      *ngFor="let item of itensComprados"
+      [item]="item"
+      (atualizar)="atualizarItem($event)"
+      (remover)="removerItem($event)"
+    ></app-item>
+  </div>
+  
